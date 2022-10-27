@@ -4,6 +4,9 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const generateHTML = require("./src/generatehtml");
+
+const teamMembers = []
 
 const managerQuestions = [
     {
@@ -107,28 +110,44 @@ const internQuestions = [
 function internInit() {
     inquirer.prompt(internQuestions).then((answers) => {
         const intern = new Intern(answers.iName, answers.id, answers.email, answers.school);
-        console.log(intern);
+        teamMembers.push(intern);
         if(answers.member === "Engineer") {
             engineerInit();
         }
-        if(answers.member === "Intern") {
+        else if(answers.member === "Intern") {
             internInit();
         }
-    }) 
+        
+        else {
+            writeToFile(teamMembers);
+        }
+    }); 
 }
 
-
+// to initilize engineer
 function engineerInit() {
     inquirer.prompt(engQuestions).then((answers) => {
-        console.log(answers);
         const engineer = new Engineer(answers.eName, answers.id, answers.email, answers.github);
-        console.log(engineer);
+        console.log(engineer.getRole());
+        teamMembers.push(engineer);
         if(answers.member === "Engineer") {
             engineerInit();
         }
-        if(answers.member === "Intern") {
+        else if(answers.member === "Intern") {
             internInit();
         }
+        else{
+            writeToFile(teamMembers);
+        }
+
+        
+    });
+}
+
+function writeToFile(teamMembers) {
+    console.log(teamMembers);
+    fs.writeFile(`./dist/index.html`, generateHTML(teamMembers), (err) => {
+        err ? console.log(err) : console.log("Successfully Generated HTML file");
     });
 }
 
@@ -136,17 +155,22 @@ function engineerInit() {
 
 function managerInit() {
     inquirer.prompt(managerQuestions).then((answers) => {
-        console.log(answers);
-        const manager = new Manager(answers.mName, answers.id, answers.email)
-        console.log(manager);
+        const manager = new Manager(answers.mName, answers.id, answers.email, answers.office)
+        teamMembers.push(manager);
         if(answers.member === "Engineer") {
             engineerInit();
         }
-        if(answers.member === "Intern") {
+        else if(answers.member === "Intern") {
             internInit();
         }
-        
+        else{
+            writeToFile(teamMembers);
+        }
     });
+
 }
 
+
+
 managerInit();
+
