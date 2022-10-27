@@ -13,20 +13,24 @@ test("can set name via constructor arguments", () => {
 });
 
 // testing set intern id
-test("can set name id constructor arguments", () => {
-    
+test("can set id via constructor arguments", () => { 
     const intern = new Intern("Youssef", 15);
     expect(intern.id).toBe(15);
 });
 
 // testing set intern email
-test("can set name email constructor arguments", () => {
+test("can set email via constructor arguments", () => {
     const intern = new Intern("Youssef", 24, "test@email.com");
     expect(intern.email).toBe("test@email.com");
 });
 
-// TESTS FOR GETTERS //
+// testing set intern School
+test("can set school via constructor arguments", () => { 
+    const intern = new Intern("Youssef", 15, "test@email.com", "UCF");
+    expect(intern.school).toBe("UCF");
+});
 
+// TESTS FOR GETTERS //
 // testing for getName() intern
 test("can get name via getName()", () => {
     const intern = new Intern("Youssef");
@@ -39,9 +43,8 @@ test("can get id via getId()", () => {
     expect(intern.getId()).toBe(intern.id);
 });
 
-
 // testing for getEmail() intern
-test("can get id via getEmail()", () => {
+test("can get email via getEmail()", () => {
     const intern = new Intern("Youssef", 199, "email@test.com");
     expect(intern.getEmail()).toBe(intern.email);
 });
@@ -51,4 +54,11 @@ test("can get id via getEmail()", () => {
 test("can get id via getRole()", () => {
     const intern = new Intern("Youssef", 199, "email");
     expect(intern.getRole()).toBe("Intern");
+});
+
+
+// testing for getSchool() intern
+test("can get id via getSchool()", () => {
+    const intern = new Intern("Youssef", 199, "email", "UCF");
+    expect(intern.getSchool()).toBe("UCF");
 });

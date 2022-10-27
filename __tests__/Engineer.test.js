@@ -13,16 +13,21 @@ test("can set name via constructor arguments", () => {
 });
 
 // testing set engineer id
-test("can set name id constructor arguments", () => {
-    
+test("can set id via constructor arguments", () => {
     const engineer = new Engineer("Youssef", 15);
     expect(engineer.id).toBe(15);
 });
 
 // testing set engineer email
-test("can set name email constructor arguments", () => {
+test("can set email via constructor arguments", () => {
     const engineer = new Engineer("Youssef", 24, "test@email.com");
     expect(engineer.email).toBe("test@email.com");
+});
+
+// testing set engineer github
+test("can set github via constructor arguments", () => {
+    const engineer = new Engineer("Youssef", 24, "test@email.com", "https://github.com/youssefojeil");
+    expect(engineer.github).toBe("https://github.com/youssefojeil");
 });
 
 // TESTS FOR GETTERS //
@@ -46,9 +51,14 @@ test("can get id via getEmail()", () => {
     expect(engineer.getEmail()).toBe(engineer.email);
 });
 
-
 // testing for getRole() engineer
 test("can get id via getRole()", () => {
     const engineer = new Engineer("Youssef", 199, "email");
     expect(engineer.getRole()).toBe("Engineer");
+});
+
+// testing for getGithub() engineer
+test("can get id via getGithub()", () => {
+    const engineer = new Engineer("Youssef", 199, "email", "https://github.com/youssefojeil");
+    expect(engineer.getGithub()).toBe("https://github.com/youssefojeil");
 });

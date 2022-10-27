@@ -13,14 +13,13 @@ test("can set name via constructor arguments", () => {
 });
 
 // testing set employee id
-test("can set name id constructor arguments", () => {
-    
+test("can set id via constructor arguments", () => {
     const employee = new Employee("Youssef", 15);
     expect(employee.id).toBe(15);
 });
 
 // testing set employee email
-test("can set name email constructor arguments", () => {
+test("can set email via constructor arguments", () => {
     const employee = new Employee("Youssef", 24, "test@email.com");
     expect(employee.email).toBe("test@email.com");
 });
@@ -41,14 +40,14 @@ test("can get id via getId()", () => {
 
 
 // testing for getEmail() employee
-test("can get id via getEmail()", () => {
+test("can get email via getEmail()", () => {
     const employee = new Employee("Youssef", 199, "email@test.com");
     expect(employee.getEmail()).toBe(employee.email);
 });
 
 
 // testing for getRole() employee
-test("can get id via getRole()", () => {
+test("can get role via getRole()", () => {
     const employee = new Employee("Youssef", 199, "email");
     expect(employee.getRole()).toBe("Employee");
 });
