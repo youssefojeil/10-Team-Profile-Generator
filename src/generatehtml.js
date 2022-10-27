@@ -24,7 +24,9 @@ function generateHTML(teamMembers) {
     console.log(cards);
     console.log(cards.length);
 
-    return "testing"
+    employeeCards = cards.join(" ");
+
+    return employeeCards + footer
 }
 
 function generateManagerCard(manager) {
@@ -50,15 +52,15 @@ function generateManagerCard(manager) {
     
         <div class="container">
             <div class="row">
-    <div class="card mr-4 bg-primary" style="width: 18rem;">
+    <div class="card m-4 bg-primary" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${manager.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${manager.id}</li>
-        <li class="list-group-item">Email:${manager.email}</li>
-        <li class="list-group-item">Office:${manager.officeNumber}</li>
+        <li class="list-group-item">Email: ${manager.email}</li>
+        <li class="list-group-item">Office: ${manager.officeNumber}</li>
     </ul>
 </div>`
     
@@ -67,30 +69,30 @@ function generateManagerCard(manager) {
 
 function generateEngineerCard(engineer) {
     console.log(engineer.name, engineer.id, engineer.email, engineer.github);
-    return `<div class="card mr-4 bg-primary" style="width: 18rem;">
+    return `<div class="card m-4 bg-primary" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${engineer.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineer.id}</li>
-        <li class="list-group-item">Email:${engineer.email}</li>
-        <li class="list-group-item">${engineer.github}</li>
+        <li class="list-group-item">Email: ${engineer.email}</li>
+        <li class="list-group-item">Github: ${engineer.github}</li>
     </ul>
 </div>`
 }
 
 function generateInternCard(intern) {
     
-    return `<div class="card mr-4 bg-primary" style="width: 18rem;">
+    return `<div class="card m-4 bg-primary" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${intern.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${intern.id}</li>
-        <li class="list-group-item">Email:${intern.email}</li>
-        <li class="list-group-item">${intern.school}</li>
+        <li class="list-group-item">Email: ${intern.email}</li>
+        <li class="list-group-item">School: ${intern.school}</li>
     </ul>
 </div>`
 }
