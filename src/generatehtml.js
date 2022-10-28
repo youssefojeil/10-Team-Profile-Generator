@@ -73,7 +73,7 @@ function generateEngineerCard(engineer) {
     return `<div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
-        <h6 class="card-subtitle m-2">${engineer.getRole()}</h6>
+        <h6 class="card-subtitle m-2"><i class="fa-solid fa-ghost m-2"></i>${engineer.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineer.id}</li>
