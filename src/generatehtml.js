@@ -21,9 +21,6 @@ function generateHTML(teamMembers) {
         }
     }
 
-    console.log(cards);
-    console.log(cards.length);
-
     employeeCards = cards.join(" ");
 
     return employeeCards + footer
@@ -38,13 +35,17 @@ function generateManagerCard(manager) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        <title>Document</title>
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../dist/styles.css">    
+        <title>Team Members</title>
     </head>
     
     <body>
     
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid jumbo-custom text-center">
             <div class="container">
                 <h1 class="display-4">My Team</h1>
             </div>
@@ -52,10 +53,10 @@ function generateManagerCard(manager) {
     
         <div class="container">
             <div class="row">
-    <div class="card m-4 bg-primary" style="width: 18rem;">
+    <div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${manager.getRole()}</h6>
+        <h6 class="card-subtitle m-2">${manager.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${manager.id}</li>
@@ -68,11 +69,10 @@ function generateManagerCard(manager) {
 
 
 function generateEngineerCard(engineer) {
-    console.log(engineer.name, engineer.id, engineer.email, engineer.github);
-    return `<div class="card m-4 bg-primary" style="width: 18rem;">
+    return `<div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${engineer.getRole()}</h6>
+        <h6 class="card-subtitle m-2">${engineer.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineer.id}</li>
@@ -84,10 +84,10 @@ function generateEngineerCard(engineer) {
 
 function generateInternCard(intern) {
     
-    return `<div class="card m-4 bg-primary" style="width: 18rem;">
+    return `<div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${intern.getRole()}</h6>
+        <h6 class="card-subtitle m-2">${intern.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${intern.id}</li>
