@@ -128,7 +128,6 @@ function internInit() {
 function engineerInit() {
     inquirer.prompt(engQuestions).then((answers) => {
         const engineer = new Engineer(answers.eName, answers.id, answers.email, answers.github);
-        console.log(engineer.getRole());
         teamMembers.push(engineer);
         if(answers.member === "Engineer") {
             engineerInit();
@@ -145,7 +144,6 @@ function engineerInit() {
 }
 
 function writeToFile(teamMembers) {
-    console.log(teamMembers);
     fs.writeFile(`./dist/index.html`, generateHTML(teamMembers), (err) => {
         err ? console.log(err) : console.log("Successfully Generated HTML file");
     });
