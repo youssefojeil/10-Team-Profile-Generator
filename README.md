@@ -34,9 +34,9 @@ npm run test
 ```
 
 ## Demo
-[Video Demo](https://drive.google.com/file/d/1cMN8oWC4qnE6rLS5GAd-CN-HeucJ8nGe/view?usp=sharing)
+[Video Demo](https://drive.google.com/file/d/106hDfU712bSyMqVc7IkyfXfyNnsWO9OU/view?usp=sharing)
 
-<img src="./assets/readme-generator.png" />
+<img src="./Assets/My-Team.png" />
 
 ## License
 This project is licensed under the MIT https://opensource.org/licenses/MIT

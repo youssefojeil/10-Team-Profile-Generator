@@ -78,7 +78,7 @@ function generateEngineerCard(engineer) {
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineer.id}</li>
         <li class="list-group-item">Email:<a href = "mailto:${engineer.email}"> ${engineer.email}</a></li>
-        <li class="list-group-item">Github:<a href ="${engineer.github}"target="_blank" rel="noopener noreferrer"> ${engineer.github}</a></li>
+        <li class="list-group-item">Github:<a href ="https://github.com/${engineer.github}" target="_blank" rel="noopener noreferrer"> ${engineer.github}</a></li>
     </ul>
 </div>`
 }
@@ -88,7 +88,7 @@ function generateInternCard(intern) {
     return `<div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
-        <h6 class="card-subtitle m-2"><i class="fa-solid fa-user-graduate m-2">${intern.getRole()}</h6>
+        <h6 class="card-subtitle m-2"><i class="fa-solid fa-user-graduate m-2"></i>${intern.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${intern.id}</li>
