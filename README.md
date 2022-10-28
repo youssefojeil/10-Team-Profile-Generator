@@ -33,8 +33,10 @@ To test, run the following command:
 npm run test
 ```
 
+[Test Demo](https://drive.google.com/file/d/1lnIAHQ5RH6lZEARhoyZw-kGkjmE6-zVJ/view)
+
 ## Demo
-[Video Demo](https://drive.google.com/file/d/106hDfU712bSyMqVc7IkyfXfyNnsWO9OU/view?usp=sharing)
+[Application Demo](https://drive.google.com/file/d/106hDfU712bSyMqVc7IkyfXfyNnsWO9OU/view?usp=sharing)
 
 <img src="./Assets/My-Team.png" />
 
