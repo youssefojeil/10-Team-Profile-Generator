@@ -39,6 +39,7 @@ function generateManagerCard(manager) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/53410eedde.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../dist/styles.css">    
         <title>Team Members</title>
     </head>
@@ -56,7 +57,7 @@ function generateManagerCard(manager) {
     <div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
-        <h6 class="card-subtitle m-2">${manager.getRole()}</h6>
+        <h6 class="card-subtitle m-2"><i class="fa-solid fa-user m-2"></i>${manager.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${manager.id}</li>
@@ -87,7 +88,7 @@ function generateInternCard(intern) {
     return `<div class="card m-4 bg-primary card-custom">
     <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
-        <h6 class="card-subtitle m-2">${intern.getRole()}</h6>
+        <h6 class="card-subtitle m-2"><i class="fa-solid fa-user-graduate m-2">${intern.getRole()}</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${intern.id}</li>
